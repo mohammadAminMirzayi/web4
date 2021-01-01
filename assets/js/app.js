@@ -26,13 +26,13 @@ function eventlisteners(){
             alert('پیام شما با موفقیت اضافه شد')
         }
     });
-    document.querySelector('#submit').addEventListener('click', (e)=>{
-        button.appendChild(document.createTextNode('پیام شما ذخیره شد'))
-        if(e.target.classList.contains('button')){
-            form.replaceChild(button , submit)
+//     document.querySelector('#submit').addEventListener('click', (e)=>{
+//         button.appendChild(document.createTextNode('پیام شما ذخیره شد'))
+//         if(e.target.classList.contains('button')){
+//             form.replaceChild(button , submit)
             
-        }
-})     
+//         }
+// })     
 
 
 removeBtn.addEventListener('click', (e) =>{
