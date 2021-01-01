@@ -1,94 +1,113 @@
-// variables
-
-// 
+// variabels 
 const noteList = document.querySelector('#note-list')
 
 
-
-// eventListeners
-// form subimions
-const form= document.querySelector('.form')
-let button = document.createElement('button')
-let submit = document.querySelector('#submit')
-// const noteList = document.querySelector('#note-list')
-button.classList = 'button u-full-width button-primary'
+// eventlisteners
 eventlisteners()
 function eventlisteners(){
     document.querySelector('#form').addEventListener('submit', newNote)
-    document.querySelector('#note-list').addEventListener('click', (e)=>{
-       alert('پیام شما با موفقیت حذف شد') 
-       if(e.target.classList.contains('remove-note')){
-           e.target.parentElement.remove()
-       }
-    }  )
-    document.querySelector('#submit').addEventListener('click', (e)=>{
-        if(e.target.classList.contains('button')){
-            alert('پیام شما با موفقیت اضافه شد')
-        }
-    });
-//     document.querySelector('#submit').addEventListener('click', (e)=>{
-//         button.appendChild(document.createTextNode('پیام شما ذخیره شد'))
-//         if(e.target.classList.contains('button')){
-//             form.replaceChild(button , submit)
-            
-//         }
-// })     
 
-
-removeBtn.addEventListener('click', (e) =>{
-    const  removeBtn = docuemnt.createElement('a')
-    removeBtn.classList = 'remove-note'
-    removeBtn.textContent = 'X'
-    if(e.target.classList.contains('remove-note')){
-         submit.textContent = 'خدایا مرسیی'
-         console.log(submit);
-     }
- })
-
+    noteList.addEventListener('click', removeNote)
+     
+    document.addEventListener('DOMContentLoaded', localStorageLoade)
+        
+    
 }
 
 
-// functions
-// adding new note to the list
+
+
+// function 
 function newNote(e){
- e.preventDefault()
- // acses to the note 
- const note = document.querySelector('#note').value
- // create <li> tag 
- const li = document.createElement('li')
+    // form sobmision
+   e.preventDefault() 
+   // accses to the input value
+   const note = document.querySelector('#note').value
+   // create <li> tag
+   const li = document.createElement('li')
 
- // adding note to the <li> tag 
- li.appendChild(document.createTextNode(note))
- // adding li to the note list
- noteList.appendChild(li)
-// create a Element
- const removeBtn = document.createElement('a')
- removeBtn.textContent = 'X'
- removeBtn.classList = 'remove-note'
- // adding remove btn to the <li> tag
- li.appendChild(removeBtn)
- console.log(li);
- 
+   li.appendChild(document.createTextNode(note))
+    // create removeBtn
+   const removeBtn = document.createElement('a')
 
- console.log(li);
+   removeBtn.textContent = 'X'
+
+   removeBtn.classList = 'remove-note'
+
+   li.appendChild(removeBtn)
+
+   noteList.appendChild(li)
+   
+   addToLocalStorage(note)
+
 }
-// function removeNote(e){
-//     if(e.target.classList.contains('remove-note')){
-//      e.target.parentElement.remove()  
-//     }
-// }
-// add note to the localStorage
-function addToLocalStorage(){
-    notes = getFromLocalStorage()
+
+function addToLocalStorage(note){
+
+    const notes = getNotesFromLocalStorage()
+    notes.push(note)
+    console.log(notes);
+
+    localStorage.setItem('notes', JSON.stringify(notes))
+
+    
 }
-// check localStorage to the note
-function getToLocalStorage(){
-    let getFromLs = localStorage.getItem('notes');
+
+function getNotesFromLocalStorage(){
+    let getFromLs = localStorage.getItem('notes') 
+
     let notes;
-    if (getFromLs === null) {
+   // also LocalStorage === null 
+    if(getFromLs === null){
         notes = []
-    } else {
-        notes = json.parse(getFromLs)
+        // if not exist 
+    }else{
+        notes = JSON.parse(getFromLs)
     }
     return notes
+}
+function localStorageLoade(){
+    const notes = getNotesFromLocalStorage()
+   // add Notes To The Local Storage
+    notes.forEach(function (note) {
+            // create <li> tag
+    const li = document.createElement('li')
+
+    li.appendChild(document.createTextNode(note))
+        // create removeBtn
+    const removeBtn = document.createElement('a')
+
+    removeBtn.textContent = 'X'
+
+    removeBtn.classList = 'remove-note'
+
+    li.appendChild(removeBtn)
+
+    noteList.appendChild(li)
+    });
+}
+// remove Local Storage
+function removeFromLocalStorage(noteContent){
+      
+     const noteDelete = noteContent.substring(0, noteContent.length - 1)
+
+     console.log(noteDelete);
+
+    const notesFromLs = getNotesFromLocalStorage()
+
+    notesFromLs.forEach(function(note, index){
+        if(note === noteDelete ){
+            notesFromLs.splice(index, 1)
+        }
+        
+    });
+
+    localStorage.setItem('notes', JSON.stringify(notesFromLs))
+
+}
+function removeNote(e){
+    if(e.target.classList.contains('remove-note')){
+        e.target.parentElement.remove()
+    }
+    removeFromLocalStorage(e.target.parentElement.textContent)
 }
