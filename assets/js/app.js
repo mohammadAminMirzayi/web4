@@ -40,6 +40,8 @@ function newNote(e){
    
    addToLocalStorage(note)
 
+   this.reset()
+
 }
 
 function addToLocalStorage(note){
