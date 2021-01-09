@@ -75,11 +75,11 @@ function submitForm(e){
   e.preventDefault()
  // accses to the spinner
   const spinner = document.querySelector('#spinner')
-  spinner.src = '../img/spinner.gif'
+  spinner.src = '/img/spinner.gif'
   spinner.style.display = 'block'
  // create new img
   const sendEmailImg = document.createElement('img')
-  sendEmailImg.src = "../img/mail.gif"
+  sendEmailImg.src = "/img/mail.gif"
   sendEmailImg.style.display = 'block'
   const loaders = document.querySelector("#loaders")
   setTimeout(function()  {
