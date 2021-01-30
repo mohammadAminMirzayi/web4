@@ -1,0 +1,274 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    background-color: rgba(300,270,3000,100);
+    border-radius: 5px;
+    height:50px;
+    box-shadow:1px 3px 5px black;
+    padding:0 200px 0 100px;
+    margin-bottom: 10px;
+    margin: 0 0 10px 0;
+}
+.header-menu li{
+    list-style: none;
+    display: inline-block;
+    float: right;
+    padding: 20px 80px;
+    
+}
+.header-menu li a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.header-menu li a:hover{
+    color: #8fbaf3;
+    transition: color 0.5s;
+    padding: 0 0 7px 0;
+    margin-bottom: 9px;
+    border-bottom:#ffb400 solid 2px ;
+}
+
+.header-menu h1{
+	float: left;
+	font-weight: 800;
+	font-size: 21px;
+	color: #000000;
+    margin:13px 0 0 15px;
+    cursor: pointer;
+
+         
+}
+.sticky {
+    /* background-color:rgba(300,270,3000,100); */
+    background-color: #e3e2df;
+	height:70px;
+	position: fixed;
+    width: 100%;
+    color: #F8F9FA;
+    z-index: 9;
+    width: 100%;
+    height: 70px;
+    border: 1px solid ;
+    box-shadow: -6px 0 white, 6px 0 white, 0 7px 5px -2px black;
+}
+
+.main{
+    background: url("/img/intro.jpg") no-repeat center;
+    height: 92.1vh;
+    background-size: cover;
+    background-attachment: fixed;    
+ 
+}
+
+.caption{
+    height: 500px;
+}
+.caption h1{
+    padding: 30px 100px 0 0;
+    font-size: 30px;
+    font-weight: 800;
+    
+}
+
+.caption-p h1{
+  margin:0 300px 0 0 ;
+  font-size: 50px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.caption-p h1:hover{
+    color: crimson;
+    font-size: 45px;
+    font-weight: 700;
+    transition: color 0.9ms;
+    cursor: pointer;
+  }
+
+.caption-p p{
+ padding:0 100px 0 170px ;
+ padding-top: 80px;
+ line-height: 32px;
+}
+
+.caption{
+    background-color: #F8F9FA;
+    margin: 32px 50px 0 50px;
+    
+}
+
+.caption-p p {
+    margin: 0 0 0 50px;
+    font-size: 17px;
+    color: #000000;
+    font-weight: 900;
+}
+
+.caption-p h3{
+    margin: 17px 300px 0 0;
+    font-size: 43px;
+    color: #000000;
+}
+
+.caption-p h3:hover{
+  color: #00B3EC;
+  user-select: none;
+}
+
+.caption1{
+    background-color: #ffb400;
+    height: 400px;
+    margin: 0 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+.caption1 h1{
+    padding: 0 0 50px 350px;
+}
+
+
+.caption-p{
+    padding: 0 3px 50px 0;
+    margin: 17px 0 0 15px;
+}
+
+.caption-2 h1{
+    padding: 0 0 50px 250px;
+}
+
+#truck{
+    margin: 0px 39px 17px 0px;
+    color: #FFFEFB;
+    font-size: 50px;
+}
+
+.caption-1{
+    font-size: 27px;
+    margin: 0 0 0 0;
+}
+
+#edit{
+    margin: 0 39px 15px 0;
+    color: #F8F9FA;
+    font-size: 50px;
+}
+
+#trint{
+    margin: 0 59px 13px 0 ;
+    color: #FFFEFB;
+    font-size: 60px;
+}
+
+#tape{
+    margin: 0 40px 13px 0 ;
+    color: #FFFEFB;
+    font-size: 60px;
+}
+
+.phone{
+    margin: 17px 0 0 0;
+    background-color: #474b4f;
+    height: 300px;
+    width: 100%;
+}
+
+.phone ul li {
+list-style: none;
+float: right;
+margin: 100px 250px 0 0 ;
+}
+
+.phone ul li a{
+    color: #000000;
+    font-size: 30px;
+    text-decoration: none;
+    margin:  0 13px 0 0 ;
+}
+
+#i1{
+    font-size: 27px;
+}
+
+#i2{
+    font-size: 27px;
+}
+
+#i3{
+    font-size: 27px;
+}
+
+.sticky-3{
+    border-color: #000000;
+    background-color: #fdb827;
+    transition: background-color 1s ease;
+}
+
+.sticky-{
+    background-color: #61892f;
+    transition: background-color 3s ease;
+    
+}
+
+.Up{
+  width: 50px;
+  height: 37px;
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+  background-color: #8fbaf3;
+  border: #ffb400;
+  text-decoration: none;
+  color: #000000;
+  font-size: 32px;
+  text-align: center;
+  border-radius: 32px;
+}
+
+.up:active{
+    transform: scale(0,9);
+}
+
+.a-l{
+    list-style: none;
+} 
+
+#phone-number{
+    margin: 50px 70px 0 0;
+    padding: 3px 7px;
+    background-color: transparent;
+    border: 3px solid black;
+}
+
+#faPhone{
+    margin: 0 0 0 7px;
+}
+
+#phone-number:hover{
+  background-color: #ea5455;
+  border: #ffb400;
+  color: #F8F9FA;
+  padding: 5px 9px;
+}
+
+#phone-number:active{
+transform: scale(0.9);
+}
+
+::selection{
+    color: #FFFEFB;
+    background: #000000;
+}
+
